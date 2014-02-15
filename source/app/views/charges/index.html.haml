@@ -2,27 +2,24 @@
 
   %h1 Failed Charges
   %ul.failed
-    %li
-      %span.name Mike Potato
-      %span.amount $30.00
-      %span.date September, 13, 2013
-    %li
-      %span.name Leon Fuel
-      %span.amount $30.00
-      %span.date September, 13, 2013
-    %li
-      %span.name Mike Potato
-      %span.amount $30.00
-      %span.date September, 13, 2013
+    - @failed_charges.each do |charge|
+      %li
+        %span.name= charge.customer.name
+        %span.amount== $#{charge.real_amount}
+        %span.date= charge.created_at
 
   %h1 Disputed Charges
   %ul.disupted
-    %li aaa
-    %li aaa
-    %li aaa
+    - @disputed_charges.each do |charge|
+      %li
+        %span.name= charge.customer.name
+        %span.amount== $#{charge.real_amount}
+        %span.date= charge.created_at
 
   %h1 Successful Charges
   %ul.successful
-    %li aaa
-    %li aaa
-    %li aaa
+    - @successful_charges.each do |charge|
+      %li
+        %span.name= charge.customer.name
+        %span.amount== $#{charge.real_amount}
+        %span.date= charge.created_at
