@@ -9,7 +9,7 @@
         %span.date= charge.created_at
 
   %h1 Disputed Charges
-  %ul.disupted
+  %ul.disputed
     - @disputed_charges.each do |charge|
       %li
         %span.name= charge.customer.name
